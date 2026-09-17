@@ -1,0 +1,934 @@
+Timing is on.
+SET
+Time: 0.261 ms
+SET
+Time: 0.128 ms
+psql:/scripts/pashayev_vaqif_tapsiriq.sql:4: NOTICE:  drop cascades to 7 other objects
+DETAIL:  drop cascades to table magaza.satis_log
+drop cascades to table magaza.kateqoriya
+drop cascades to table magaza.mehsul
+drop cascades to table magaza.musteri
+drop cascades to table magaza.sifaris_detal
+drop cascades to table magaza.sifaris
+drop cascades to table magaza.satis_qeyd
+DROP SCHEMA
+Time: 15.267 ms
+CREATE SCHEMA
+Time: 2.486 ms
+SET
+Time: 0.099 ms
+DROP TABLE
+Time: 0.190 ms
+psql:/scripts/pashayev_vaqif_tapsiriq.sql:9: NOTICE:  table "satis_log" does not exist, skipping
+CREATE TABLE
+Time: 2.739 ms
+INSERT 0 300000
+Time: 611.267 ms
+ANALYZE
+Time: 161.889 ms
+CREATE TABLE
+Time: 3.858 ms
+CREATE TABLE
+Time: 3.353 ms
+CREATE TABLE
+Time: 3.221 ms
+CREATE TABLE
+Time: 3.108 ms
+   tablename   |    indexname     |                                             indexdef
+---------------+------------------+--------------------------------------------------------------------------------------------------
+ kateqoriya    | pk_kateqoriya    | CREATE UNIQUE INDEX pk_kateqoriya ON magaza.kateqoriya USING btree (id)
+ mehsul        | pk_mehsul        | CREATE UNIQUE INDEX pk_mehsul ON magaza.mehsul USING btree (id)
+ musteri       | pk_musteri       | CREATE UNIQUE INDEX pk_musteri ON magaza.musteri USING btree (id)
+ sifaris_detal | pk_sifaris_detal | CREATE UNIQUE INDEX pk_sifaris_detal ON magaza.sifaris_detal USING btree (sifaris_id, mehsul_id)
+(4 rows)
+
+Time: 2.557 ms
+ALTER TABLE
+Time: 3.078 ms
+INSERT 0 1
+Time: 2.797 ms
+psql:/scripts/pashayev_vaqif_tapsiriq.sql:90: NOTICE:  6: tekrar email redd edildi (23505): duplicate key value violates unique constraint "uq_musteri_email"
+DO
+Time: 4.533 ms
+INSERT 0 2
+Time: 2.766 ms
+ALTER TABLE
+Time: 3.151 ms
+INSERT 0 2
+Time: 2.906 ms
+psql:/scripts/pashayev_vaqif_tapsiriq.sql:104: NOTICE:  7: eyni kateqoriyada tekrar ad redd edildi (23505): duplicate key value violates unique constraint "uq_mehsul_kateqoriya_ad"
+DO
+Time: 2.620 ms
+ALTER TABLE
+Time: 2.786 ms
+INSERT 0 2
+Time: 35.088 ms
+CREATE TABLE
+Time: 3.948 ms
+INSERT 0 1
+Time: 1.010 ms
+psql:/scripts/pashayev_vaqif_tapsiriq.sql:123: NOTICE:  8: NULLS NOT DISTINCT ikinci NULL-u redd etdi (23505)
+DO
+Time: 4.608 ms
+DROP TABLE
+Time: 3.496 ms
+CREATE INDEX
+Time: 3.120 ms
+INSERT 0 3
+Time: 3.024 ms
+psql:/scripts/pashayev_vaqif_tapsiriq.sql:137: NOTICE:  9: ikinci aktiv mehsul redd edildi (23505)
+DO
+Time: 4.513 ms
+ALTER TABLE
+Time: 3.500 ms
+psql:/scripts/pashayev_vaqif_tapsiriq.sql:155: NOTICE:  10: menfi qiymet redd edildi (23514): new row for relation "mehsul" violates check constraint "chk_mehsul_qiymet"
+DO
+psql:/scripts/pashayev_vaqif_tapsiriq.sql:155: NOTICE:  10: menfi stok redd edildi (23514): new row for relation "mehsul" violates check constraint "chk_mehsul_anbar"
+Time: 0.703 ms
+ALTER TABLE
+Time: 3.009 ms
+ALTER TABLE
+Time: 2.543 ms
+ALTER TABLE
+Time: 3.121 ms
+CREATE TABLE
+Time: 5.313 ms
+INSERT 0 1
+Time: 2.777 ms
+UPDATE 6
+Time: 2.578 ms
+ALTER TABLE
+Time: 2.619 ms
+ALTER TABLE
+Time: 3.628 ms
+ALTER TABLE
+Time: 4.715 ms
+ALTER TABLE
+Time: 2.888 ms
+ALTER TABLE
+Time: 3.834 ms
+INSERT 0 1
+Time: 4.322 ms
+INSERT 0 1
+Time: 4.893 ms
+       email       | qeydiyyat_tarixi
+-------------------+------------------
+ leyla@example.com | 2026-09-17
+ murad@example.com |
+(2 rows)
+
+Time: 0.793 ms
+ALTER TABLE
+Time: 4.018 ms
+DO
+Time: 0.279 ms
+psql:/scripts/pashayev_vaqif_tapsiriq.sql:207: NOTICE:  17: hesablanan sutuna UPDATE olmaz (SQLSTATE 428C9): column "cemi" can only be updated to DEFAULT
+ALTER TABLE
+Time: 2.906 ms
+ALTER TABLE
+Time: 3.537 ms
+psql:/scripts/pashayev_vaqif_tapsiriq.sql:222: NOTICE:  18: olmayan kateqoriyaya istinad redd edildi (23503)
+DO
+Time: 3.701 ms
+ALTER TABLE
+Time: 2.718 ms
+ALTER TABLE
+Time: 2.812 ms
+ALTER TABLE
+Time: 2.720 ms
+ALTER TABLE
+Time: 2.814 ms
+INSERT 0 1
+Time: 2.998 ms
+INSERT 0 1
+Time: 2.852 ms
+INSERT 0 1
+Time: 2.767 ms
+INSERT 0 1
+Time: 2.649 ms
+DELETE 1
+Time: 2.449 ms
+      ad       | kateqoriya_id
+---------------+---------------
+ Silinme testi |
+(1 row)
+
+Time: 0.159 ms
+psql:/scripts/pashayev_vaqif_tapsiriq.sql:246: NOTICE:  19: RESTRICT bagli mehsulun silinmesini blokladi (23503)
+DO
+Time: 3.009 ms
+DELETE 1
+Time: 2.709 ms
+ qalan_detal
+-------------
+           0
+(1 row)
+
+Time: 0.306 ms
+ALTER TABLE
+Time: 2.528 ms
+ALTER TABLE
+Time: 2.762 ms
+BEGIN
+Time: 0.091 ms
+INSERT 0 1
+Time: 0.247 ms
+INSERT 0 1
+Time: 0.159 ms
+COMMIT
+Time: 2.378 ms
+  id  | devet_eden_id
+------+---------------
+ 1001 |          1002
+ 1002 |          1001
+(2 rows)
+
+Time: 0.176 ms
+INSERT 0 1
+Time: 2.387 ms
+ id |       ad
+----+----------------
+  1 | Qelem
+  2 | Qelem
+  4 | Aktiv 1
+  5 | Passiv 1
+  6 | Passiv 2
+ 10 | NULL test
+ 13 | Bos stok testi
+(7 rows)
+
+Time: 0.271 ms
+UPDATE 7
+Time: 2.727 ms
+ALTER TABLE
+Time: 2.660 ms
+ALTER TABLE
+Time: 2.968 ms
+INSERT 0 1
+Time: 2.492 ms
+ALTER TABLE
+Time: 2.436 ms
+psql:/scripts/pashayev_vaqif_tapsiriq.sql:285: NOTICE:  23: NOT VALID yeni sehvi redd etdi (23514)
+DO
+Time: 0.368 ms
+UPDATE 1
+Time: 2.468 ms
+ALTER TABLE
+Time: 2.766 ms
+BEGIN
+Time: 0.125 ms
+ALTER TABLE
+Time: 0.399 ms
+INSERT 0 1
+Time: 0.248 ms
+ALTER TABLE
+Time: 0.443 ms
+ALTER TABLE
+Time: 0.420 ms
+ROLLBACK
+Time: 0.122 ms
+BEGIN
+Time: 0.173 ms
+SET CONSTRAINTS
+Time: 0.118 ms
+INSERT 0 1
+Time: 0.288 ms
+INSERT 0 1
+Time: 0.155 ms
+COMMIT
+Time: 2.548 ms
+    cedvel     |            ad            |     tip     |                                                                                    terif
+---------------+--------------------------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ kateqoriya    | pk_kateqoriya            | Esas acar   | PRIMARY KEY (id)
+ mehsul        | chk_mehsul_ad_bos_deyil  | Yoxlama     | CHECK (((ad)::text <> ''::text))
+ mehsul        | chk_mehsul_anbar         | Yoxlama     | CHECK ((anbarda_say >= 0))
+ mehsul        | chk_mehsul_endirim       | Yoxlama     | CHECK (((endirimli_qiymet >= (0)::numeric) AND (endirimli_qiymet <= qiymet)))
+ mehsul        | chk_mehsul_qiymet        | Yoxlama     | CHECK (((qiymet > (0)::numeric) AND (qiymet < (100000)::numeric)))
+ mehsul        | fk_mehsul_kateqoriya     | Xarici acar | FOREIGN KEY (kateqoriya_id) REFERENCES kateqoriya(id) ON DELETE SET NULL
+ mehsul        | pk_mehsul                | Esas acar   | PRIMARY KEY (id)
+ mehsul        | uq_mehsul_kateqoriya_ad  | Tekrarsiz   | UNIQUE (kateqoriya_id, ad)
+ musteri       | chk_musteri_email_format | Yoxlama     | CHECK (((POSITION(('@'::text) IN (email)) > 0) AND (POSITION(('.'::text) IN (email)) > 0) AND (length((email)::text) > 5) AND (POSITION((' '::text) IN (email)) = 0)))
+ musteri       | fk_musteri_devet_eden    | Xarici acar | FOREIGN KEY (devet_eden_id) REFERENCES musteri(id) DEFERRABLE INITIALLY DEFERRED
+ musteri       | pk_musteri               | Esas acar   | PRIMARY KEY (id)
+ musteri       | uq_musteri_email         | Tekrarsiz   | UNIQUE (email)
+ musteri       | uq_musteri_telefon       | Tekrarsiz   | UNIQUE (telefon)
+ sifaris       | chk_sifaris_legv_sebebi  | Yoxlama     | CHECK ((((status)::text <> 'legv'::text) OR (legv_sebebi IS NOT NULL)))
+ sifaris       | chk_sifaris_status       | Yoxlama     | CHECK (((status)::text = ANY ((ARRAY['gozleyir'::character varying, 'gonderilib'::character varying, 'catdirilib'::character varying, 'legv'::character varying])::text[])))
+ sifaris       | fk_sifaris_musteri       | Xarici acar | FOREIGN KEY (musteri_id) REFERENCES musteri(id)
+ sifaris       | pk_sifaris               | Esas acar   | PRIMARY KEY (id)
+ sifaris_detal | fk_detal_mehsul          | Xarici acar | FOREIGN KEY (mehsul_id) REFERENCES mehsul(id) ON DELETE RESTRICT
+ sifaris_detal | fk_detal_sifaris         | Xarici acar | FOREIGN KEY (sifaris_id) REFERENCES sifaris(id) ON DELETE CASCADE
+ sifaris_detal | pk_sifaris_detal         | Esas acar   | PRIMARY KEY (sifaris_id, mehsul_id)
+(20 rows)
+
+Time: 0.960 ms
+26: indeksden evvel
+ANALYZE
+Time: 152.653 ms
+                                                QUERY PLAN
+----------------------------------------------------------------------------------------------------------
+ Seq Scan on satis_log  (cost=0.00..7008.00 rows=60 width=52) (actual time=0.270..18.417 rows=60 loops=1)
+   Filter: ((mehsul_adi)::text = 'Mehsul 4321'::text)
+   Rows Removed by Filter: 299940
+   Buffers: shared hit=3258
+ Planning:
+   Buffers: shared hit=29
+ Planning Time: 0.080 ms
+ Execution Time: 18.437 ms
+(8 rows)
+
+Time: 18.909 ms
+CREATE INDEX
+Time: 421.793 ms
+26: indeksden sonra
+ANALYZE
+Time: 153.058 ms
+                                                            QUERY PLAN
+-----------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on satis_log  (cost=4.89..221.21 rows=60 width=52) (actual time=0.044..0.134 rows=60 loops=1)
+   Recheck Cond: ((mehsul_adi)::text = 'Mehsul 4321'::text)
+   Heap Blocks: exact=60
+   Buffers: shared hit=60 read=3
+   ->  Bitmap Index Scan on idx_satis_log_mehsul_adi  (cost=0.00..4.87 rows=60 width=0) (actual time=0.034..0.034 rows=60 loops=1)
+         Index Cond: ((mehsul_adi)::text = 'Mehsul 4321'::text)
+         Buffers: shared read=3
+ Planning:
+   Buffers: shared hit=29 read=1
+ Planning Time: 0.230 ms
+ Execution Time: 0.150 ms
+(11 rows)
+
+Time: 0.728 ms
+CREATE INDEX
+Time: 205.235 ms
+27a: kateqoriya
+ANALYZE
+Time: 152.623 ms
+                                                                   QUERY PLAN
+-------------------------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on satis_log  (cost=680.09..4698.84 rows=60860 width=52) (actual time=2.893..9.478 rows=60000 loops=1)
+   Recheck Cond: ((kateqoriya)::text = 'Ofis'::text)
+   Heap Blocks: exact=3258
+   Buffers: shared hit=3258 read=53
+   ->  Bitmap Index Scan on idx_satis_log_kateqoriya_tarix  (cost=0.00..664.87 rows=60860 width=0) (actual time=2.492..2.493 rows=60000 loops=1)
+         Index Cond: ((kateqoriya)::text = 'Ofis'::text)
+         Buffers: shared read=53
+ Planning:
+   Buffers: shared hit=29 read=1
+ Planning Time: 0.109 ms
+ Execution Time: 11.622 ms
+(11 rows)
+
+Time: 12.058 ms
+27b: tarix
+ANALYZE
+Time: 155.405 ms
+                                                                  QUERY PLAN
+----------------------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on satis_log  (cost=3266.50..4157.34 rows=298 width=52) (actual time=2.214..2.521 rows=300 loops=1)
+   Recheck Cond: (tarix = '2022-01-02'::date)
+   Heap Blocks: exact=300
+   Buffers: shared hit=353 read=199
+   ->  Bitmap Index Scan on idx_satis_log_kateqoriya_tarix  (cost=0.00..3266.42 rows=298 width=0) (actual time=2.171..2.172 rows=300 loops=1)
+         Index Cond: (tarix = '2022-01-02'::date)
+         Buffers: shared hit=53 read=199
+ Planning:
+   Buffers: shared hit=35
+ Planning Time: 0.117 ms
+ Execution Time: 2.549 ms
+(11 rows)
+
+Time: 3.218 ms
+27c: her ikisi
+ANALYZE
+Time: 158.348 ms
+                                                                QUERY PLAN
+------------------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on satis_log  (cost=5.04..221.51 rows=60 width=52) (actual time=0.057..0.325 rows=300 loops=1)
+   Recheck Cond: (((kateqoriya)::text = 'Ofis'::text) AND (tarix = '2022-01-03'::date))
+   Heap Blocks: exact=300
+   Buffers: shared hit=303
+   ->  Bitmap Index Scan on idx_satis_log_kateqoriya_tarix  (cost=0.00..5.02 rows=60 width=0) (actual time=0.026..0.026 rows=300 loops=1)
+         Index Cond: (((kateqoriya)::text = 'Ofis'::text) AND (tarix = '2022-01-03'::date))
+         Buffers: shared hit=3
+ Planning:
+   Buffers: shared hit=29
+ Planning Time: 0.095 ms
+ Execution Time: 0.349 ms
+(11 rows)
+
+Time: 0.810 ms
+ALTER TABLE
+Time: 95.691 ms
+CREATE INDEX
+Time: 67.706 ms
+     conname     | contype |    indexname
+-----------------+---------+-----------------
+ uq_satis_log_id | u       | uq_satis_log_id
+(1 row)
+
+Time: 1.116 ms
+        indexname
+--------------------------
+ uq_satis_log_id
+ idx_satis_log_id_musteri
+(2 rows)
+
+Time: 0.575 ms
+ALTER TABLE
+Time: 3.353 ms
+psql:/scripts/pashayev_vaqif_tapsiriq.sql:360: NOTICE:  28: musteqil indeksi DROP CONSTRAINT ile silmek olmaz (42704)
+DO
+Time: 3.396 ms
+DROP INDEX
+Time: 3.669 ms
+CREATE INDEX
+Time: 103.960 ms
+29: tam indeks
+ANALYZE
+Time: 151.514 ms
+ indeks_olcusu
+---------------
+ 2056 kB
+(1 row)
+
+Time: 0.452 ms
+                                                                 QUERY PLAN
+---------------------------------------------------------------------------------------------------------------------------------------------
+ Index Scan using idx_satis_log_status_tam on satis_log  (cost=0.42..382.51 rows=2810 width=52) (actual time=0.021..1.278 rows=3092 loops=1)
+   Index Cond: ((status)::text = 'legv'::text)
+   Buffers: shared hit=3092 read=5
+ Planning:
+   Buffers: shared hit=31 read=1
+ Planning Time: 0.118 ms
+ Execution Time: 1.392 ms
+(7 rows)
+
+Time: 1.772 ms
+DROP INDEX
+Time: 3.039 ms
+CREATE INDEX
+Time: 25.496 ms
+29: partial indeks
+ANALYZE
+Time: 151.017 ms
+ indeks_olcusu
+---------------
+ 40 kB
+(1 row)
+
+Time: 0.344 ms
+                                                                  QUERY PLAN
+----------------------------------------------------------------------------------------------------------------------------------------------
+ Index Scan using idx_satis_log_status_legv on satis_log  (cost=0.28..379.01 rows=2860 width=52) (actual time=0.009..1.140 rows=3092 loops=1)
+   Buffers: shared hit=3092 read=4
+ Planning:
+   Buffers: shared hit=33 read=1
+ Planning Time: 0.135 ms
+ Execution Time: 1.254 ms
+(6 rows)
+
+Time: 1.562 ms
+30: funksiya ve sade indeks
+ANALYZE
+Time: 161.960 ms
+                                                 QUERY PLAN
+------------------------------------------------------------------------------------------------------------
+ Seq Scan on satis_log  (cost=0.00..7758.00 rows=1500 width=52) (actual time=0.627..65.314 rows=60 loops=1)
+   Filter: (upper((mehsul_adi)::text) = 'MEHSUL 100'::text)
+   Rows Removed by Filter: 299940
+   Buffers: shared hit=3258
+ Planning:
+   Buffers: shared hit=34
+ Planning Time: 0.130 ms
+ Execution Time: 65.339 ms
+(8 rows)
+
+Time: 65.968 ms
+30: hell 1, eyni semantikali sade muqayise (melumat sabit formadadir)
+ANALYZE
+Time: 152.875 ms
+                                                            QUERY PLAN
+-----------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on satis_log  (cost=4.89..221.21 rows=60 width=52) (actual time=0.040..0.096 rows=60 loops=1)
+   Recheck Cond: ((mehsul_adi)::text = 'Mehsul 100'::text)
+   Heap Blocks: exact=60
+   Buffers: shared hit=62 read=1
+   ->  Bitmap Index Scan on idx_satis_log_mehsul_adi  (cost=0.00..4.87 rows=60 width=0) (actual time=0.029..0.029 rows=60 loops=1)
+         Index Cond: ((mehsul_adi)::text = 'Mehsul 100'::text)
+         Buffers: shared hit=2 read=1
+ Planning:
+   Buffers: shared hit=36
+ Planning Time: 0.168 ms
+ Execution Time: 0.109 ms
+(11 rows)
+
+Time: 0.613 ms
+CREATE INDEX
+Time: 394.480 ms
+30: hell 2, ifade indeksi
+ANALYZE
+Time: 219.725 ms
+                                                             QUERY PLAN
+-------------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on satis_log  (cost=4.89..221.36 rows=60 width=52) (actual time=0.073..0.164 rows=60 loops=1)
+   Recheck Cond: (upper((mehsul_adi)::text) = 'MEHSUL 100'::text)
+   Heap Blocks: exact=60
+   Buffers: shared hit=60 read=3
+   ->  Bitmap Index Scan on idx_satis_log_upper_mehsul  (cost=0.00..4.87 rows=60 width=0) (actual time=0.062..0.062 rows=60 loops=1)
+         Index Cond: (upper((mehsul_adi)::text) = 'MEHSUL 100'::text)
+         Buffers: shared read=3
+ Planning:
+   Buffers: shared hit=39 read=1
+ Planning Time: 0.228 ms
+ Execution Time: 0.180 ms
+(11 rows)
+
+Time: 0.852 ms
+CREATE INDEX
+Time: 170.319 ms
+VACUUM
+Time: 19.502 ms
+31: index only scan ve heap fetches
+ANALYZE
+Time: 213.447 ms
+                                                                          QUERY PLAN
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Index Only Scan using idx_satis_log_seher_include_tarix on satis_log  (cost=0.42..1978.95 rows=60030 width=12) (actual time=0.033..6.246 rows=60000 loops=1)
+   Index Cond: (seher = 'Gəncə'::text)
+   Heap Fetches: 0
+   Buffers: shared hit=1 read=233
+ Planning:
+   Buffers: shared hit=16
+ Planning Time: 0.125 ms
+ Execution Time: 8.507 ms
+(8 rows)
+
+Time: 9.117 ms
+CREATE INDEX
+Time: 104.752 ms
+32a: DESC
+ANALYZE
+Time: 212.201 ms
+                                                                      QUERY PLAN
+------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.42..1.81 rows=20 width=52) (actual time=0.022..0.049 rows=20 loops=1)
+   Buffers: shared hit=20 read=3
+   ->  Index Scan using idx_satis_log_mebleg_desc on satis_log  (cost=0.42..20835.18 rows=300000 width=52) (actual time=0.021..0.046 rows=20 loops=1)
+         Buffers: shared hit=20 read=3
+ Planning:
+   Buffers: shared hit=46 read=1
+ Planning Time: 0.225 ms
+ Execution Time: 0.062 ms
+(8 rows)
+
+Time: 0.701 ms
+CREATE INDEX
+Time: 103.808 ms
+32b: DESC NULLS LAST
+ANALYZE
+Time: 220.374 ms
+                                                                           QUERY PLAN
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.42..1.81 rows=20 width=52) (actual time=0.021..0.083 rows=20 loops=1)
+   Buffers: shared hit=20 read=3
+   ->  Index Scan using idx_satis_log_mebleg_desc_nulls_last on satis_log  (cost=0.42..20835.45 rows=300000 width=52) (actual time=0.020..0.080 rows=20 loops=1)
+         Buffers: shared hit=20 read=3
+ Planning:
+   Buffers: shared hit=36 read=1
+ Planning Time: 0.163 ms
+ Execution Time: 0.098 ms
+(8 rows)
+
+Time: 0.536 ms
+ANALYZE
+Time: 219.013 ms
+              indexname               |  olcu   | cedvele_nisbet_faiz |                                                       indexdef
+--------------------------------------+---------+---------------------+-----------------------------------------------------------------------------------------------------------------------
+ idx_satis_log_seher_include_tarix    | 9272 kB |                35.6 | CREATE INDEX idx_satis_log_seher_include_tarix ON magaza.satis_log USING btree (seher) INCLUDE (tarix)
+ idx_satis_log_mebleg_desc_nulls_last | 6608 kB |                25.4 | CREATE INDEX idx_satis_log_mebleg_desc_nulls_last ON magaza.satis_log USING btree (mebleg DESC NULLS LAST)
+ idx_satis_log_mebleg_desc            | 6608 kB |                25.4 | CREATE INDEX idx_satis_log_mebleg_desc ON magaza.satis_log USING btree (mebleg DESC)
+ idx_satis_log_upper_mehsul           | 2144 kB |                 8.2 | CREATE INDEX idx_satis_log_upper_mehsul ON magaza.satis_log USING btree (upper((mehsul_adi)::text))
+ idx_satis_log_mehsul_adi             | 2144 kB |                 8.2 | CREATE INDEX idx_satis_log_mehsul_adi ON magaza.satis_log USING btree (mehsul_adi)
+ idx_satis_log_kateqoriya_tarix       | 2032 kB |                 7.8 | CREATE INDEX idx_satis_log_kateqoriya_tarix ON magaza.satis_log USING btree (kateqoriya, tarix)
+ idx_satis_log_status_legv            | 40 kB   |                 0.2 | CREATE INDEX idx_satis_log_status_legv ON magaza.satis_log USING btree (status) WHERE ((status)::text = 'legv'::text)
+(7 rows)
+
+Time: 1.693 ms
+CREATE INDEX
+Time: 92.822 ms
+ANALYZE
+Time: 211.451 ms
+ pg_stat_reset
+---------------
+
+(1 row)
+
+Time: 0.392 ms
+ count
+-------
+    60
+(1 row)
+
+Time: 0.416 ms
+ count
+-------
+  3092
+(1 row)
+
+Time: 0.403 ms
+ count
+-------
+   300
+(1 row)
+
+Time: 0.240 ms
+ count
+-------
+    60
+(1 row)
+
+Time: 0.448 ms
+ seher |   tarix
+-------+------------
+ Gəncə | 2022-01-02
+ Gəncə | 2022-01-07
+ Gəncə | 2022-01-12
+ Gəncə | 2022-01-17
+ Gəncə | 2022-01-22
+ Gəncə | 2022-01-27
+ Gəncə | 2022-02-01
+ Gəncə | 2022-02-06
+ Gəncə | 2022-02-11
+ Gəncə | 2022-02-16
+ Gəncə | 2022-02-21
+ Gəncə | 2022-02-26
+ Gəncə | 2022-03-03
+ Gəncə | 2022-03-08
+ Gəncə | 2022-03-13
+ Gəncə | 2022-03-18
+ Gəncə | 2022-03-23
+ Gəncə | 2022-03-28
+ Gəncə | 2022-04-02
+ Gəncə | 2022-04-07
+(20 rows)
+
+Time: 0.299 ms
+   id   | musteri_kodu | mehsul_adi  | kateqoriya |  seher   | status | miqdar | mebleg  |   tarix
+--------+--------------+-------------+------------+----------+--------+--------+---------+------------
+   9151 |        18770 | Mehsul 4151 | Aksesuar   | Gəncə    | tamam  |      4 | 5010.00 | 2022-06-01
+ 200963 |        19740 | Mehsul 963  | Mebel      | Şəki     | tamam  |      4 | 5009.97 | 2024-08-21
+ 226999 |        14847 | Mehsul 1999 | Kitab      | Lənkəran | tamam  |      7 | 5009.97 | 2024-09-26
+ 187922 |        11018 | Mehsul 2922 | Ofis       | Sumqayıt | tamam  |      5 | 5009.91 | 2024-07-11
+  35365 |        11007 | Mehsul 365  | Texnika    | Bakı     | tamam  |     10 | 5009.90 | 2023-01-01
+ 192877 |          458 | Mehsul 2877 | Ofis       | Sumqayıt | tamam  |      9 | 5009.90 | 2024-05-27
+ 260521 |         8126 | Mehsul 521  | Aksesuar   | Gəncə    | tamam  |      3 | 5009.90 | 2023-06-06
+  14312 |         4127 | Mehsul 4312 | Ofis       | Sumqayıt | tamam  |      3 | 5009.88 | 2022-11-09
+  51519 |        16357 | Mehsul 1519 | Kitab      | Lənkəran | tamam  |     10 | 5009.87 | 2023-06-04
+ 116492 |         7842 | Mehsul 1492 | Ofis       | Sumqayıt | tamam  |      4 | 5009.86 | 2023-05-08
+ 285002 |         2061 | Mehsul 2    | Ofis       | Sumqayıt | tamam  |      8 | 5009.86 | 2022-01-03
+ 201391 |        11035 | Mehsul 1391 | Aksesuar   | Gəncə    | tamam  |     10 | 5009.84 | 2023-01-27
+ 254818 |         9584 | Mehsul 4818 | Mebel      | Şəki     | tamam  |      2 | 5009.81 | 2024-03-29
+ 133573 |         1123 | Mehsul 3573 | Mebel      | Şəki     | tamam  |      3 | 5009.79 | 2023-07-28
+ 297988 |        14291 | Mehsul 2988 | Mebel      | Şəki     | tamam  |      4 | 5009.79 | 2024-09-15
+  91055 |          926 | Mehsul 1055 | Texnika    | Bakı     | tamam  |      9 | 5009.78 | 2022-02-25
+ 246893 |        16992 | Mehsul 1893 | Mebel      | Şəki     | tamam  |      5 | 5009.77 | 2024-06-12
+ 292562 |        19192 | Mehsul 2562 | Ofis       | Sumqayıt | tamam  |     10 | 5009.77 | 2023-07-17
+   1734 |         8914 | Mehsul 1734 | Kitab      | Lənkəran | tamam  |      3 | 5009.75 | 2024-01-05
+  59416 |         5690 | Mehsul 4416 | Aksesuar   | Gəncə    | tamam  |      8 | 5009.72 | 2023-02-21
+(20 rows)
+
+Time: 0.241 ms
+ pg_stat_force_next_flush
+--------------------------
+
+(1 row)
+
+Time: 0.163 ms
+ pg_stat_clear_snapshot
+------------------------
+
+(1 row)
+
+Time: 0.128 ms
+                indeks                | idx_scan |      veziyyet
+--------------------------------------+----------+--------------------
+ idx_satis_log_kateqoriya_tarix       |        1 | Istifade olunub
+ idx_satis_log_mebleg_desc            |        1 | Istifade olunub
+ idx_satis_log_mebleg_desc_nulls_last |        0 | Istifade olunmayib
+ idx_satis_log_mehsul_adi             |        1 | Istifade olunub
+ idx_satis_log_miqdar_unused          |        0 | Istifade olunmayib
+ idx_satis_log_seher_include_tarix    |        1 | Istifade olunub
+ idx_satis_log_status_legv            |        1 | Istifade olunub
+ idx_satis_log_upper_mehsul           |        1 | Istifade olunub
+(8 rows)
+
+Time: 1.146 ms
+35: trigramdan evvel
+ANALYZE
+Time: 212.060 ms
+                                                 QUERY PLAN
+------------------------------------------------------------------------------------------------------------
+ Seq Scan on satis_log  (cost=0.00..7008.00 rows=3016 width=52) (actual time=0.363..23.386 rows=60 loops=1)
+   Filter: ((mehsul_adi)::text ~~ '%hsul 4321%'::text)
+   Rows Removed by Filter: 299940
+   Buffers: shared hit=3258
+ Planning:
+   Buffers: shared hit=42
+ Planning Time: 0.228 ms
+ Execution Time: 23.404 ms
+(8 rows)
+
+Time: 24.050 ms
+CREATE EXTENSION
+Time: 0.369 ms
+psql:/scripts/pashayev_vaqif_tapsiriq.sql:440: NOTICE:  extension "pg_trgm" already exists, skipping
+CREATE INDEX
+Time: 626.461 ms
+35: trigramdan sonra
+ANALYZE
+Time: 218.832 ms
+                                                             QUERY PLAN
+-------------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on satis_log  (cost=73.31..185.05 rows=30 width=52) (actual time=3.379..3.437 rows=60 loops=1)
+   Recheck Cond: ((mehsul_adi)::text ~~ '%hsul 4321%'::text)
+   Heap Blocks: exact=60
+   Buffers: shared hit=335
+   ->  Bitmap Index Scan on idx_satis_log_mehsul_trgm  (cost=0.00..73.30 rows=30 width=0) (actual time=3.363..3.363 rows=60 loops=1)
+         Index Cond: ((mehsul_adi)::text ~~ '%hsul 4321%'::text)
+         Buffers: shared hit=275
+ Planning:
+   Buffers: shared hit=51
+ Planning Time: 0.204 ms
+ Execution Time: 3.455 ms
+(11 rows)
+
+Time: 3.992 ms
+DROP INDEX
+Time: 3.925 ms
+DROP INDEX
+Time: 3.273 ms
+DROP INDEX
+Time: 2.740 ms
+DROP INDEX
+Time: 2.794 ms
+DROP INDEX
+Time: 3.086 ms
+DROP INDEX
+Time: 3.705 ms
+DROP INDEX
+Time: 4.101 ms
+DROP INDEX
+Time: 3.521 ms
+DROP INDEX
+Time: 2.888 ms
+36a: indekssiz 100000 INSERT
+ANALYZE
+Time: 157.163 ms
+INSERT 0 100000
+Time: 164.210 ms
+DELETE 100000
+Time: 69.209 ms
+VACUUM
+Time: 10.124 ms
+CREATE INDEX
+Time: 362.494 ms
+CREATE INDEX
+Time: 129.901 ms
+CREATE INDEX
+Time: 148.506 ms
+CREATE INDEX
+Time: 104.867 ms
+CREATE INDEX
+Time: 76.745 ms
+36b: 5 indeksle eyni 100000 INSERT
+ANALYZE
+Time: 147.200 ms
+INSERT 0 100000
+Time: 1156.907 ms (00:01.157)
+ANALYZE
+Time: 165.153 ms
+ALTER TABLE
+Time: 116.858 ms
+CREATE TABLE
+Time: 3.707 ms
+INSERT 0 200000
+Time: 1247.717 ms (00:01.248)
+   indexname   |                                indexdef
+---------------+-------------------------------------------------------------------------
+ pk_satis_qeyd | CREATE UNIQUE INDEX pk_satis_qeyd ON magaza.satis_qeyd USING btree (id)
+(1 row)
+
+Time: 0.834 ms
+37a: istinad eden FK indekslesdirilmeyib
+ANALYZE
+Time: 153.243 ms
+ANALYZE
+Time: 22.447 ms
+BEGIN
+Time: 0.094 ms
+                                                          QUERY PLAN
+------------------------------------------------------------------------------------------------------------------------------
+ Delete on satis_log  (cost=0.42..8.44 rows=0 width=0) (actual time=0.099..0.100 rows=0 loops=1)
+   Buffers: shared hit=4 read=2
+   ->  Index Scan using pk_satis_log on satis_log  (cost=0.42..8.44 rows=1 width=6) (actual time=0.084..0.085 rows=1 loops=1)
+         Index Cond: (id = 299999)
+         Buffers: shared hit=2 read=2
+ Planning:
+   Buffers: shared hit=3
+ Planning Time: 0.116 ms
+ Trigger for constraint fk_satis_qeyd_log: time=7.789 calls=1
+ Execution Time: 7.923 ms
+(10 rows)
+
+Time: 8.368 ms
+ROLLBACK
+Time: 0.150 ms
+CREATE INDEX
+Time: 49.664 ms
+37b: istinad eden FK indeksi var
+ANALYZE
+Time: 162.769 ms
+ANALYZE
+Time: 17.912 ms
+BEGIN
+Time: 0.179 ms
+                                                          QUERY PLAN
+------------------------------------------------------------------------------------------------------------------------------
+ Delete on satis_log  (cost=0.42..8.44 rows=0 width=0) (actual time=0.023..0.024 rows=0 loops=1)
+   Buffers: shared hit=6
+   ->  Index Scan using pk_satis_log on satis_log  (cost=0.42..8.44 rows=1 width=6) (actual time=0.012..0.013 rows=1 loops=1)
+         Index Cond: (id = 299999)
+         Buffers: shared hit=4
+ Planning:
+   Buffers: shared hit=3
+ Planning Time: 0.099 ms
+ Trigger for constraint fk_satis_qeyd_log: time=0.155 calls=1
+ Execution Time: 0.193 ms
+(10 rows)
+
+Time: 0.500 ms
+ROLLBACK
+Time: 0.126 ms
+ original_ofis_baki
+--------------------
+                  0
+(1 row)
+
+Time: 3.839 ms
+INSERT 0 3000
+Time: 25.962 ms
+38a: iki ayri indeks
+ANALYZE
+Time: 158.557 ms
+                                                                   QUERY PLAN
+-------------------------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on satis_log  (cost=1827.22..6458.87 rows=17110 width=52) (actual time=3.315..3.554 rows=3000 loops=1)
+   Recheck Cond: (((kateqoriya)::text = 'Ofis'::text) AND ((seher)::text = 'Bakı'::text))
+   Heap Blocks: exact=32
+   Buffers: shared hit=174
+   ->  BitmapAnd  (cost=1827.22..1827.22 rows=17110 width=0) (actual time=3.255..3.257 rows=0 loops=1)
+         Buffers: shared hit=142
+         ->  Bitmap Index Scan on idx_satis_log_kateqoriya  (cost=0.00..904.03 rows=82615 width=0) (actual time=1.518..1.518 rows=83000 loops=1)
+               Index Cond: ((kateqoriya)::text = 'Ofis'::text)
+               Buffers: shared hit=71
+         ->  Bitmap Index Scan on idx_satis_log_seher  (cost=0.00..914.38 rows=83461 width=0) (actual time=1.589..1.589 rows=83000 loops=1)
+               Index Cond: ((seher)::text = 'Bakı'::text)
+               Buffers: shared hit=71
+ Planning:
+   Buffers: shared hit=73
+ Planning Time: 0.166 ms
+ Execution Time: 3.692 ms
+(16 rows)
+
+Time: 4.326 ms
+DROP INDEX
+Time: 3.325 ms
+DROP INDEX
+Time: 3.011 ms
+CREATE INDEX
+Time: 303.512 ms
+38b: bir kompozit indeks
+ANALYZE
+Time: 156.607 ms
+                                                                   QUERY PLAN
+------------------------------------------------------------------------------------------------------------------------------------------------
+ Bitmap Heap Scan on satis_log  (cost=232.21..4858.61 rows=16760 width=52) (actual time=0.063..0.270 rows=3000 loops=1)
+   Recheck Cond: (((kateqoriya)::text = 'Ofis'::text) AND ((seher)::text = 'Bakı'::text))
+   Heap Blocks: exact=32
+   Buffers: shared hit=32 read=6
+   ->  Bitmap Index Scan on idx_satis_log_kateqoriya_seher  (cost=0.00..228.02 rows=16760 width=0) (actual time=0.056..0.056 rows=3000 loops=1)
+         Index Cond: (((kateqoriya)::text = 'Ofis'::text) AND ((seher)::text = 'Bakı'::text))
+         Buffers: shared read=6
+ Planning:
+   Buffers: shared hit=29 read=1
+ Planning Time: 0.148 ms
+ Execution Time: 0.385 ms
+(11 rows)
+
+Time: 0.887 ms
+39a: UPDATE-den evvel
+ANALYZE
+Time: 156.371 ms
+ indeks_olcusu
+---------------
+ 2808 kB
+(1 row)
+
+Time: 0.326 ms
+UPDATE 160000
+Time: 2552.094 ms (00:02.552)
+ pg_stat_force_next_flush
+--------------------------
+
+(1 row)
+
+Time: 0.250 ms
+ pg_stat_clear_snapshot
+------------------------
+
+(1 row)
+
+Time: 0.199 ms
+39b: UPDATE-den sonra
+ indeks_olcusu | olu_setir
+---------------+-----------
+ 3864 kB       |    160000
+(1 row)
+
+Time: 1.089 ms
+REINDEX
+Time: 296.263 ms
+39c: REINDEX-den sonra
+ indeks_olcusu
+---------------
+ 2808 kB
+(1 row)
+
+Time: 0.349 ms
+ANALYZE
+Time: 2.417 ms
+ANALYZE
+Time: 3.338 ms
+ANALYZE
+Time: 3.270 ms
+ANALYZE
+Time: 0.350 ms
+ANALYZE
+Time: 0.254 ms
+ANALYZE
+Time: 159.457 ms
+ANALYZE
+Time: 18.986 ms
+    cedvel     | texmini_setir | cedvel_olcusu | indeks_sayi | indekslerin_olcusu | esas_acar |      status
+---------------+---------------+---------------+-------------+--------------------+-----------+------------------
+ satis_log     |        403000 | 48 MB         |           5 | 29 MB              | Var       | Nezaret lazimdir
+ satis_qeyd    |        200000 | 7080 kB       |           2 | 8816 kB            | Var       | Nezaret lazimdir
+ kateqoriya    |             2 | 8192 bytes    |           1 | 16 kB              | Var       | Nezaret lazimdir
+ mehsul        |             9 | 8192 bytes    |           3 | 48 kB              | Var       | Nezaret lazimdir
+ musteri       |             9 | 8192 bytes    |           3 | 48 kB              | Var       | Nezaret lazimdir
+ sifaris       |             0 | 8192 bytes    |           1 | 16 kB              | Var       | Nezaret lazimdir
+ sifaris_detal |             0 | 8192 bytes    |           1 | 16 kB              | Var       | Nezaret lazimdir
+(7 rows)
+
+Time: 1.830 ms
